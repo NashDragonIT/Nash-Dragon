@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Students | CampusHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark portal-nav"><div class="container">
+  <a class="navbar-brand fw-bold" href="../index.html">Campus<span>Hub</span></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="../index.html">Dashboard</a></li>
+    <li class="nav-item"><a class="nav-link active" href="students.html">Students</a></li>
+    <li class="nav-item"><a class="nav-link" href="announcements.html">Announcements</a></li>
+  </ul></div>
+</div></nav>
+<main class="container py-5">
+  <div class="page-heading"><div><p class="eyebrow">RECORD MANAGEMENT</p><h1>Student Records</h1><p class="muted">Add, search, filter, and remove sample student records.</p></div>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#studentModal">+ Add Student</button>
+  </div>
+  <div id="studentAlert" class="alert d-none" role="alert"></div>
+  <section class="panel">
+    <div class="row g-2 mb-3">
+      <div class="col-md-6"><label for="studentSearch" class="form-label">Search students</label><input id="studentSearch" class="form-control" type="search" placeholder="Search by ID, name, or course"></div>
+      <div class="col-md-3"><label for="courseFilter" class="form-label">Filter by course</label><select id="courseFilter" class="form-select"><option value="">All courses</option><option>BSIT</option><option>BSHM</option><option>BEED</option><option>BSBA</option></select></div>
+      <div class="col-md-3"><label for="sortStudents" class="form-label">Sort by name</label><select id="sortStudents" class="form-select"><option value="asc">A to Z</option><option value="desc">Z to A</option></select></div>
+    </div>
+    <div class="table-responsive"><table class="table align-middle">
+      <thead><tr><th>Student ID</th><th>Full Name</th><th>Email</th><th>Course</th><th>Year</th><th>Action</th></tr></thead>
+      <tbody id="studentsTable"></tbody>
+    </table></div>
+    <p id="noStudents" class="muted text-center py-3 d-none">No matching student records found.</p>
+    <p class="small muted mb-0">Records are saved in this browser using localStorage. This is a frontend demo only.</p>
+  </section>
+</main>
+<footer class="footer"><div class="container">CampusHub <span>•</span> Frontend demonstration project</div></footer>
+
+<div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+  <form id="studentForm" novalidate>
+   <div class="modal-header"><h2 class="modal-title fs-5" id="studentModalLabel">Add New Student</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+   <div class="modal-body">
+    <div class="mb-3"><label for="studentId" class="form-label">Student ID</label><input id="studentId" class="form-control" required maxlength="20" placeholder="e.g. 2026-001"><div class="invalid-feedback">Enter a student ID.</div></div>
+    <div class="mb-3"><label for="studentName" class="form-label">Full Name</label><input id="studentName" class="form-control" required minlength="2" placeholder="e.g. Juan Dela Cruz"><div class="invalid-feedback">Enter a name with at least 2 characters.</div></div>
+    <div class="mb-3"><label for="studentEmail" class="form-label">Email Address</label><input id="studentEmail" type="email" class="form-control" required placeholder="student@example.com"><div class="invalid-feedback">Enter a valid email address.</div></div>
+    <div class="row"><div class="col-7 mb-3"><label for="studentCourse" class="form-label">Course</label><select id="studentCourse" class="form-select" required><option value="">Choose...</option><option>BSIT</option><option>BSHM</option><option>BEED</option><option>BSBA</option></select><div class="invalid-feedback">Choose a course.</div></div>
+    <div class="col-5 mb-3"><label for="studentYear" class="form-label">Year Level</label><select id="studentYear" class="form-select" required><option value="">Year</option><option>1st</option><option>2nd</option><option>3rd</option><option>4th</option></select><div class="invalid-feedback">Choose a year.</div></div></div>
+   </div>
+   <div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button type="submit" class="btn btn-primary">Save Student</button></div>
+  </form>
+ </div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../assets/js/script.js"></script>
+</body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Announcements | CampusHub</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="../assets/css/style.css"></head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark portal-nav"><div class="container"><a class="navbar-brand fw-bold" href="../index.html">Campus<span>Hub</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="../index.html">Dashboard</a></li><li class="nav-item"><a class="nav-link" href="students.html">Students</a></li><li class="nav-item"><a class="nav-link active" href="announcements.html">Announcements</a></li></ul></div></div></nav>
+<main class="container py-5">
+ <div class="page-heading"><div><p class="eyebrow">SCHOOL UPDATES</p><h1>Announcements</h1><p class="muted">Read the latest reminders and campus updates.</p></div></div>
+ <div class="row g-3 mb-3"><div class="col-md-8"><label for="announcementSearch" class="form-label">Search announcements</label><input id="announcementSearch" class="form-control" type="search" placeholder="Search title or details"></div><div class="col-md-4"><label for="announcementCategory" class="form-label">Category</label><select id="announcementCategory" class="form-select"><option value="">All categories</option><option>Academic</option><option>Events</option><option>Reminder</option></select></div></div>
+ <div id="announcementsList" class="row g-3"></div><p id="noAnnouncements" class="muted text-center py-4 d-none">No announcements match your search.</p>
+</main>
+<footer class="footer"><div class="container">CampusHub <span>•</span> Frontend demonstration project</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="../assets/js/script.js"></script>
+</body></html>
